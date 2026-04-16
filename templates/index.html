@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>My Remote</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="loading-screen">
+    <h2>connecting to server... ⏳</h2>
+</div>
+
+<div id="touchpad" style="display: none;">
+    <span>Touch Here</span>
+</div>
+
+<div class="buttons-container" id="buttons-area" style="display: none;">
+        <button class="btn" id="leftClick">LEFT</button>
+        <button class="btn" id="rightClick">RIGHT</button>
+</div>
+<div class="keyboard-containter" id="keyboard-area" style="display: none;">
+    <input type="text" 
+       id="keyboard-input" 
+       class="remote-input" 
+       placeholder="Tap to type..."
+       autocapitalize="none" 
+       autocorrect="off" 
+       spellcheck="false" 
+       autocomplete="off">
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
