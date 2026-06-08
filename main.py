@@ -11,20 +11,18 @@ logging.basicConfig(
 )
 
 macros = {
-    # ניהול חלונות
+    # window management
     "alt+f4": [Key.alt, Key.f4],
-    "show_desktop": [Key.cmd, KeyCode(char='d')],
-    "switch_app": [Key.alt, Key.tab],
-    "task_manager": [Key.ctrl, Key.shift, Key.esc],
+    "cmd+tab": [Key.cmd, Key.tab],
+    "desktop": [Key.cmd, KeyCode(char='d')],
     
-    # מדיה וווליום
-    "play_pause": [Key.media_play_pause],
+    # media volume
     "volume_up": [Key.media_volume_up],
     "volume_down": [Key.media_volume_down],
     "mute": [Key.media_volume_mute],
     
-    # פעולות בסיסיות
-    "crtl+c": [Key.ctrl, KeyCode(char='c')],
+    # basic actions
+    "ctrl+c": [Key.ctrl, KeyCode(char='c')],
     "ctrl+v": [Key.ctrl, KeyCode(char='v')],
     "Enter": [Key.enter],
     "Escape": [Key.esc],
@@ -88,22 +86,6 @@ def handle_keyboard_action(data):
 def handle_client_log(data):
     message = data.get('msg', 'No message')
     logging.info(f"[IPHONE JS] - {message}")
-
-# mouse.move(110, 0)
-# mouse.press(Button.left)
-# mouse.release(Button.left)
-# mouse.click(Button.left, 2)
-# time.sleep(3)
-# mouse.scroll(0, -2)
-
-
-# time.sleep(2)
-# keyboard.press(Key.space)
-# keyboard.release(Key.space)
-# keyboard.press('a')
-# keyboard.release('a')
-# time.sleep(2)
-# keyboard.type('Hello World')
 
 @app.route('/')
 def index():

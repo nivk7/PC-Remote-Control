@@ -112,14 +112,13 @@ body {
     color: red !important;
 }
 
-/* הקונטיינר שעוטף את תיבת הטקסט שומר על ריווח נכון מהצדדים */
 .keyboard-container {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
 }
 
-/* העיצוב של תיבת הטקסט עצמה */
+/* design of input box */
 .remote-input {
     width: 100%;
     padding: 15px;
@@ -128,14 +127,13 @@ body {
     color: white;
     border: 2px solid #555;
     border-radius: 10px;
-    outline: none; /* מעלים את מסגרת ברירת המחדל של הדפדפן */
-    text-align: center; /* ממורכז ואלגנטי */
+    outline: none; /* ignore default outline */
+    text-align: center;
     box-sizing: border-box;
     transition: border-color 0.2s ease;
     font-size: 16px;
 }
 
-/* אנימציה כשנוגעים בתיבה והמקלדת עולה */
 .remote-input:focus {
-    border-color: #007bff; /* מסגרת כחולה שמראה שהשדה פעיל */
+    border-color: #007bff; /* blue border when keyboard is active */
 }

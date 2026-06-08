@@ -211,6 +211,6 @@ keyboardInput.addEventListener('keydown', (e) => {
 });
 
 keyboardInput.addEventListener('blur', () => {
-    // מכריח את האייפון לגלול בחזרה למעלה ולאפס את המסך
+    // make the iphone scroll back up on keyboard close
     window.scrollTo(0, 0);
 });
