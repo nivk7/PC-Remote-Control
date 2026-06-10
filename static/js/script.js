@@ -193,7 +193,6 @@ keyboardInput.addEventListener('keydown', (e) => {
             if (!keyboardText.startsWith(' ')) {
                 keyboardInput.value = '';
                 socket.emit('keyboard_action', { action: 'command', key: keyboardText });
-                remoteLog(`Executed Command: ${keyboardText}`);
                 keyboardInput.value = '';
             } else {
                 keyboardText = keyboardText.substring(1);

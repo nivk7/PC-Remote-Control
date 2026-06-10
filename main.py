@@ -15,6 +15,7 @@ macros = {
     "alt+f4": [Key.alt, Key.f4],
     "cmd+tab": [Key.cmd, Key.tab],
     "desktop": [Key.cmd, KeyCode(char='d')],
+    "cmd": [Key.cmd],
     
     # media volume
     "volume_up": [Key.media_volume_up],
@@ -74,12 +75,13 @@ def handle_keyboard_action(data):
         keys_to_press = macros.get(key)
 
         if keys_to_press:
+            logging.info(f"Executing command: {key}")
             for pressKey in keys_to_press:
                 keyboard.press(pressKey)
             for pressKey in reversed(keys_to_press):
                 keyboard.release(pressKey)
         else:
-           logging.warning(f"Commnad {keys_to_press} not found") 
+           logging.warning(f"Command '{key}' not found") 
 
 # print logs from JS to terminal
 @socketio.on('client_log')
